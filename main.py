@@ -27,3 +27,18 @@ canvas = tk.Canvas(
 )
 
 canvas.pack()
+
+
+
+# game variables
+
+player_x = WIDTH // 2
+player_y = HEIGHT - 80
+
+left_pressed = False
+right_pressed = False
+
+meteors = []
+particles = []
+stars = []
+
