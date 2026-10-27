@@ -44,3 +44,23 @@ stars = []
 
 game_over = False
 frame = 0
+
+
+
+# create stars
+
+
+for _ in range(100):
+    x = random.randint(0, WIDTH)
+    y = random.randint(0, HEIGHT)
+    speed = random.uniform(0.5, 2.5)
+    size = random.choice([1, 1, 2])
+    
+    stars.append({
+        "x": x,
+        "y": y,
+        "speed": speed,
+        "size": size
+    })
+
+
