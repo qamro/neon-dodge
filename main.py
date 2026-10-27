@@ -42,3 +42,5 @@ meteors = []
 particles = []
 stars = []
 
+game_over = False
+frame = 0
