@@ -64,3 +64,37 @@ for _ in range(100):
     })
 
 
+# player
+
+def draw_player():
+    canvas.delete("player")
+    
+    x = player_x
+    y = player_y
+    
+    # glow
+    canvas.create_oval(
+        x - 25,
+        y -25,
+        x + 25,
+        y + 25,
+        fill="#101040",
+        outLine="",
+        tags="player"
+    )
+    
+    # ship
+    
+    canvas.create_polygon(
+        x,
+        y - 30,
+        x - 22,
+        y + 20,
+        x,
+        y + 10,
+        x + 22,
+        y + 20,
+        fill="#00ffff",
+        outLine="",
+        tags="player"
+    )
