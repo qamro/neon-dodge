@@ -191,3 +191,17 @@ def draw_meteors():
             tags="meteor"
         )
 
+
+
+# update meteor positions
+
+def update_meteors():
+    global meteors
+
+    for meteor in meteors:
+        meteor["y"] += meteor["speed"]
+
+    meteors = [
+        meteor for meteor in meteors
+        if meteor["y"] - meteor["radius"] < HEIGHT
+    ]
