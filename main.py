@@ -236,3 +236,40 @@ def draw_score():
         font=("Courier", 20, "bold"),
         tags="score"
     )
+
+
+
+# display game over
+
+def show_game_over():
+    canvas.create_rectangle(
+        0, 0, WIDTH, HEIGHT,
+        fill="#050514",
+        stipple="gray50",
+        outline="",
+        tags="gameover"
+    )
+
+    canvas.create_text(
+        WIDTH // 2, HEIGHT // 2 - 55,
+        text="GAME OVER",
+        fill="#ff386b",
+        font=("Arial", 42, "bold"),
+        tags="gameover"
+    )
+
+    canvas.create_text(
+        WIDTH // 2, HEIGHT // 2 + 5,
+        text=f"FINAL SCORE: {frame * 10}",
+        fill="white",
+        font=("Courier", 20),
+        tags="gameover"
+    )
+
+    canvas.create_text(
+        WIDTH // 2, HEIGHT // 2 + 55,
+        text="Press SPACE to restart",
+        fill="#24f5e9",
+        font=("Courier", 14),
+        tags="gameover"
+    )
