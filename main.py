@@ -205,3 +205,19 @@ def update_meteors():
         meteor for meteor in meteors
         if meteor["y"] - meteor["radius"] < HEIGHT
     ]
+
+
+
+# check whether the player hits a meteor
+
+def check_collision():
+    for meteor in meteors:
+        dx = player_x - meteor["x"]
+        dy = player_y - meteor["y"]
+
+        distance = math.sqrt(dx * dx + dy * dy)
+
+        if distance < meteor["radius"] + 12:
+            return True
+
+    return False
