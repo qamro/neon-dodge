@@ -221,3 +221,18 @@ def check_collision():
             return True
 
     return False
+
+
+# display score
+
+def draw_score():
+    canvas.delete("score")
+
+    canvas.create_text(
+        20, 20,
+        anchor="nw",
+        text=f"SCORE: {frame * 10}",
+        fill="#24f5e9",
+        font=("Courier", 20, "bold"),
+        tags="score"
+    )
