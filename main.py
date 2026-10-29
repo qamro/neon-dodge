@@ -280,7 +280,7 @@ def show_game_over():
 def key_down(event):
     global left_pressed, right_pressed
 
-    if event.keysym in ("Left", "a", "A"):
+    if event.keysym in ("Left", "a", "A", "q", "Q"):
         left_pressed = True
 
     elif event.keysym in ("Right", "d", "D"):
@@ -293,7 +293,7 @@ def key_down(event):
 def key_up(event):
     global left_pressed, right_pressed
 
-    if event.keysym in ("Left", "a", "A"):
+    if event.keysym in ("Left", "a", "A", "q", "Q"):
         left_pressed = False
 
     elif event.keysym in ("Right", "d", "D"):
