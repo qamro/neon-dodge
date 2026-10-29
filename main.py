@@ -98,3 +98,15 @@ def draw_player():
         outLine="",
         tags="player"
     )
+    
+    
+    # Magenta engine flame
+    
+    canvas.create_polygon(
+        x - 6, y + 12,
+        x, y + 32 + random.randint(0, 6),
+        x + 6, y + 12,
+        fill="#ff00ff",
+        outline="",
+        tags="player"
+    )
