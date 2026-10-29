@@ -273,3 +273,28 @@ def show_game_over():
         font=("Courier", 14),
         tags="gameover"
     )
+
+
+
+# keyboard controls
+def key_down(event):
+    global left_pressed, right_pressed
+
+    if event.keysym in ("Left", "a", "A"):
+        left_pressed = True
+
+    elif event.keysym in ("Right", "d", "D"):
+        right_pressed = True
+
+    elif event.keysym == "space" and game_over:
+        restart_game()
+
+
+def key_up(event):
+    global left_pressed, right_pressed
+
+    if event.keysym in ("Left", "a", "A"):
+        left_pressed = False
+
+    elif event.keysym in ("Right", "d", "D"):
+        right_pressed = False
