@@ -366,3 +366,14 @@ def restart_game():
 
     canvas.delete("all")
     game_loop()
+
+
+
+# connect keyboard events
+root.bind("<KeyPress>", key_down)
+root.bind("<KeyRelease>", key_up)
+
+
+# start the game
+game_loop()
+root.mainloop()
