@@ -110,3 +110,26 @@ def draw_player():
         outline="",
         tags="player"
     )
+
+
+
+# Draw the moving starfield
+def draw_stars():
+    canvas.delete("stars")
+
+    for star in stars:
+        star["y"] += star["speed"]
+
+        if star["y"] > HEIGHT:
+            star["y"] = 0
+            star["x"] = random.randint(0, WIDTH)
+
+        canvas.create_oval(
+            star["x"],
+            star["y"],
+            star["x"] + star["size"],
+            star["y"] + star["size"],
+            fill="#282849",
+            outline="",
+            tags="stars"
+        )
