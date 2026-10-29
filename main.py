@@ -344,3 +344,25 @@ def game_loop():
 
     # approximately 33 frames per second
     root.after(30, game_loop)
+
+
+# restart the game
+def restart_game():
+    global player_x, player_y
+    global left_pressed, right_pressed
+    global game_over, frame
+
+    player_x = WIDTH // 2
+    player_y = HEIGHT - 80
+
+    left_pressed = False
+    right_pressed = False
+
+    meteors.clear()
+    particles.clear()
+
+    game_over = False
+    frame = 0
+
+    canvas.delete("all")
+    game_loop()
