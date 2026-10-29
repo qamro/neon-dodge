@@ -133,3 +133,61 @@ def draw_stars():
             outline="",
             tags="stars"
         )
+        
+
+
+# Create a meteor
+def spawn_meteor():
+    radius = random.randint(13, 25)
+    x = random.randint(radius, WIDTH - radius)
+
+    meteors.append({
+        "x": x,
+        "y": -radius,
+        "radius": radius,
+        "speed": min(
+            METEOR_SPEED + frame // 1500,
+            METEOR_MAX_SPEED
+        )
+    })
+
+
+# draw all meteors
+
+def draw_meteors():
+    canvas.delete("meteor")
+
+    for meteor in meteors:
+        x = meteor["x"]
+        y = meteor["y"]
+        r = meteor["radius"]
+
+        # outer glow
+        canvas.create_oval(
+            x - r - 5, y - r - 5,
+            x + r + 5, y + r + 5,
+            fill="#251025",
+            outline="#70204e",
+            width=2,
+            tags="meteor"
+        )
+
+        # pink body
+        canvas.create_oval(
+            x - r, y - r,
+            x + r, y + r,
+            fill="#ff386b",
+            outline="#ff80aa",
+            width=2,
+            tags="meteor"
+        )
+
+        # orange center
+        canvas.create_oval(
+            x - r * 0.55, y - r * 0.55,
+            x + r * 0.55, y + r * 0.55,
+            fill="#ff962e",
+            outline="",
+            tags="meteor"
+        )
+
