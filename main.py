@@ -298,3 +298,49 @@ def key_up(event):
 
     elif event.keysym in ("Right", "d", "D"):
         right_pressed = False
+
+
+
+# main game loop
+
+def game_loop():
+    global player_x, frame, game_over
+
+    if game_over:
+        return
+
+    frame += 1
+
+    # animate the background
+    draw_stars()
+
+    # move the player
+    if left_pressed:
+        player_x -= PLAYER_SPEED
+
+    if right_pressed:
+        player_x += PLAYER_SPEED
+
+    # keep the player inside the window
+    player_x = max(25, min(WIDTH - 25, player_x))
+
+    # spawn meteors
+    spawn_interval = max(10, 30 - frame // 300)
+
+    if frame % spawn_interval == 0:
+        spawn_meteor()
+
+    # update and draw game objects
+    update_meteors()
+    draw_meteors()
+    draw_player()
+    draw_score()
+
+    # detect collisions
+    if check_collision():
+        game_over = True
+        show_game_over()
+        return
+
+    # approximately 33 frames per second
+    root.after(30, game_loop)
