@@ -79,7 +79,7 @@ def draw_player():
         x + 25,
         y + 25,
         fill="#101040",
-        outLine="",
+        outline="",
         tags="player"
     )
     
@@ -95,7 +95,7 @@ def draw_player():
         x + 22,
         y + 20,
         fill="#00ffff",
-        outLine="",
+        outline="",
         tags="player"
     )
     
